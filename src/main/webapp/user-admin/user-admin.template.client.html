@@ -1,91 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>User Admin</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="./user-admin.style.client.css" rel="stylesheet" />
-    <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="user-admin.service.client.js"></script>
+
+    <link rel="stylesheet" href=
+            "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="user-admin.style.client.css" rel="stylesheet" />
+    <link rel="stylesheet" href="user-admin.style.client.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="../services/user.service.client.js"></script>
+    <script src="user-admin.controller.client.js"></script>
+
 </head>
 <body>
+
 <div class="container-fluid">
-    <h1>User Admin</h1>
+    <h1>
+        User Admin
+    </h1>
     <table class="table">
         <thead>
         <tr>
             <th>Username</th>
             <th>Password</th>
-            <th>Fist Name</th>
+            <th>First Name</th>
             <th>Last Name</th>
             <th>Role</th>
             <th>&nbsp;</th>
         </tr>
 
         <tr class="wbdv-form">
-            <td>
-                <input class="form-control wbdv-field wbdv-username" id="username"
-                       placeholder="Username"  type="text">
-            </td>
-            <td>
-                <input class="form-control wbdv-field wbdv-password" id="password"
-                       placeholder="Password"  type="password">
-            </td>
-            <td>
-                <input class="form-control wbdv-field wbdv-first-name" id="first-name"
-                       placeholder="Furong" type="text">
-            </td>
-            <td>
-                <input class="form-control wbdv-field wbdv-last-name" id="last-name"
-                       placeholder="Tian" type="text">
-            </td>
-            <td>
-                <select class="custom-select wbdv-field wbdv-role" id="role">
-                    <option selected value="Faculty">Faculty</option>
-                    <option value="Student">Student</option>
-                    <option value="Admin">Admin</option>
-                </select>
-            </td>
-            <td>
-                    <span class="float-right" style="white-space: nowrap">
-                        <button id="wbdv-search-btn" type="button" class="btn">
-                            <i class="fa fa-search fa-2x wbdv-search-btn"></i>
-                        </button>
-                        <button id="wbdv-create-btn" type="button" class="btn">
-                            <i class="fa fa-plus fa-2x wbdv-create-btn"></i>
-                        </button>
-                        <button id="wbdv-edit-btn" type="button" class="btn">
-                            <i class="fa fa-check fa-2x wbdv-edit-btn"></i>
-                        </button>
-                    </span>
-            </td>
+            <td><input id="usernameFld" class="form-control"
+                       placeholder="Username" /></td>
+            <td><input id="passwordFld" class="form-control"
+                       placeholder="Password" type="password" /></td>
+            <td><input id="firstNameFld" class="form-control"
+                       placeholder="First Name" /></td>
+            <td><input id="lastNameFld" class="form-control"
+                       placeholder="Last Name" /></td>
+            <td><select id="roleFld" class="form-control">
+                <option value="FACULTY">Faculty</option>
+                <option value="STUDENT">Student</option>
+                <option value="ADMIN">Admin</option>
+            </select></td>
+            <td><span class="float-right" style="white-space: nowrap">
+        <i class="fas fa-search fa-2x"></i>
+          &nbsp;
+        <i class="fa-2x fa fa-plus wbdv-create"></i>
+          &nbsp;
+        <i class="fa-2x fa fa-check wbdv-update"></i>
+      </span></td>
         </tr>
         </thead>
 
         <tbody class="wbdv-tbody">
-        <tr class="wbdv-template wbdv-user wbdv-hidden">
-            <td class="wbdv-username">ada</td>
-            <td>&nbsp;</td>
-            <td class="wbdv-first-name">Ada</td>
-            <td class="wbdv-last-name">Lovelace</td>
-            <td class="wbdv-role">FACULTY</td>
-            <td class="wbdv-actions">
-                        <span class="float-right">
-                            <button type="button" class="btn">
-                                <i class="fa-2x fa fa-times wbdv-remove"></i>
-                            </button>
-                            <button type="button" class="btn">
-                                <i class="fa-2x fa fa-pencil wbdv-edit"></i>
-                            </button>
-                        </span>
-            </td>
-        </tr>
         </tbody>
     </table>
+
 </div>
-<script src="user-admin.controller.client.js"></script>
+
 </body>
 </html>

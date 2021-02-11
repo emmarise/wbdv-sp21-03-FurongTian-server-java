@@ -1,4 +1,4 @@
-function UserAdminServiceClient() {
+function AdminUserServiceClient() {
     this.createUser = createUser;
     this.findAllUsers = findAllUsers;
     this.findUserById = findUserById;
@@ -8,46 +8,38 @@ function UserAdminServiceClient() {
     var self = this;
 
     function createUser(user) {
-        console.log(user)
         return fetch(self.url, {
-            method : "POST",
-            headers : {
-                "content-type" : "application/json"
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
-            body : JSON.stringify(user)
-        }).then((res) => {
-            return res.json();
+            body: JSON.stringify(user)
+        }).then(function (response) {
+            return response.json()
         })
     }
 
     function findAllUsers() {
         return fetch(self.url)
-            .then((res) => {
-                return res.json();
+            .then(function (response) {
+                return response.json()
             })
     }
 
-    function findUserById(userId) {
-        return fetch(`${self.url}/${userId}`, {
-            method : "GET"
-        }).then((res) => {
-            return res.json();
-        })
-    }
+    function findUserById(userId) { }
 
     function updateUser(userId, user) {
         return fetch(`${self.url}/${userId}`, {
-            method: "PUT",
+            method: 'PUT',
             headers: {
-                "content-type" : "application/json"
+                'content-type': 'application/json'
             },
             body: JSON.stringify(user)
-        }).then(res => res.json())
+        }).then(response => response.json())
     }
 
     function deleteUser(userId) {
-        return fetch(`${self.url}/${userId}`, {
-            method : "DELETE"
-        })
+        return fetch(`${self.url}/${userId}`,
+            {method: 'DELETE'})
     }
 }
