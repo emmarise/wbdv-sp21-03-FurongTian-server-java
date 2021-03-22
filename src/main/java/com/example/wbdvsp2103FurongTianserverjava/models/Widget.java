@@ -9,6 +9,18 @@ public class Widget {
     private Integer size;
     private String text;
 
+    private String name; // Optional name of the widget
+    private Long widgetOrder; // Order with respect to widgets in the same list
+    private String src; // Absolute or relative URL referring to online resource
+    private String url; // Absolute or relative URL referring to online resource
+    private String href; // Absolute or relative URL referring to online resource
+    private Long width; // Widget's horizontal & vertical size, e.g., Image's or YouTube's width & height
+    private Long height; // Widget's horizontal & vertical size, e.g., Image's or YouTube's width & height
+    private String cssClass; // CSS class implementing some CSS rule and transformations configured in some CSS rule
+    private String style; // CSS transformations applied to the widget
+    private String value; // Some arbitrary initial value interpreted by the widget
+
+
     // we need default one
     public Widget() {
     }
